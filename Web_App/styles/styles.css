@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .setup-screen, .game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .player-input {
+    margin-bottom: 20px;
+  }
+  
+  #scoreBoard {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  #scoreBoard div {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 40%;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #ff647f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #ff475f;
+  }
+  

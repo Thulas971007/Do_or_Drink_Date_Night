@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do or Drink: Date Night Edition</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Setup Screen -->
+      <div class="setup-screen">
+        <h1>Do or Drink: Date Night Edition</h1>
+        <p>Enter player names and choose your colors!</p>
+        <form id="playerSetupForm">
+          <div class="player-input">
+            <label for="player1Name">Player 1 Name:</label>
+            <input
+              type="text"
+              id="player1Name"
+              placeholder="Player 1"
+              required
+            />
+            <input type="color" id="player1Color" value="#ff9999" />
+          </div>
+          <div class="player-input">
+            <label for="player2Name">Player 2 Name:</label>
+            <input
+              type="text"
+              id="player2Name"
+              placeholder="Player 2"
+              required
+            />
+            <input type="color" id="player2Color" value="#9999ff" />
+          </div>
+          <button type="submit">Start Game</button>
+        </form>
+      </div>
+
+      <!-- Game Screen -->
+      <div class="game-screen hidden">
+        <div id="scoreBoard">
+          <div id="player1Display"></div>
+          <div id="player2Display"></div>
+        </div>
+        <h2 id="currentCard">Ready to start?</h2>
+        <p id="turnIndicator"></p>
+        <button id="nextCard">Next Card</button>
+        <button id="completeDare">Complete Dare</button>
+        <button id="backToSetup">Back to Setup</button>
+      </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
