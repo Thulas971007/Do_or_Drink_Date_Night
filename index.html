@@ -8,48 +8,80 @@
   </head>
   <body>
     <div id="app">
-      <!-- Setup Screen -->
-      <div class="setup-screen">
-        <h1>Do or Drink: Date Night Edition</h1>
-        <p>Enter player names and choose your colors!</p>
-        <form id="playerSetupForm">
-          <div class="player-input">
-            <label for="player1Name">Player 1 Name:</label>
-            <input
-              type="text"
-              id="player1Name"
-              placeholder="Player 1"
-              required
-            />
-            <input type="color" id="player1Color" value="#ff9999" />
+        <!-- Top Buttons -->
+        <div id="topButtons">
+          <button id="backToSetup">Back to Setup</button>
+          <button id="saveGame">Save Game</button>
+          <button id="loadGame">Load Game</button>
+        </div>
+      
+        <!-- Setup Screen -->
+        <div class="setup-screen">
+          <h1>Do or Drink: Date Night Edition</h1>
+          <h2>Enter player names and choose your colors!</h2>
+          <form id="playerSetupForm">
+            <div class="player-input">
+              <label for="player1Name">Player 1 Name:</label>
+              <input type="text" id="player1Name" placeholder="Player 1" required />
+              <input type="color" id="player1Color" value="#ff9999" />
+            </div>
+
+            <div class="player-input">
+              <label for="player2Name">Player 2 Name:</label>
+              <input type="text" id="player2Name" placeholder="Player 2" required />
+              <input type="color" id="player2Color" value="#9999ff" />
+
+            </div>
+            <div class="Cat">
+            <label for="category">Choose a category:</label>
+            <select id="category">
+              <option value="all">All</option>
+              <option value="romantic">Romantic</option>
+              <option value="funny">Funny</option>
+              <option value="daring">Daring</option>
+            </select>
           </div>
-          <div class="player-input">
-            <label for="player2Name">Player 2 Name:</label>
-            <input
-              type="text"
-              id="player2Name"
-              placeholder="Player 2"
-              required
-            />
-            <input type="color" id="player2Color" value="#9999ff" />
+          <div class="score">  
+          <label for="winningScore">Winning Score:</label>
+          <input type="number" id="winningScore" value="10" min="1" />
           </div>
-          <button type="submit">Start Game</button>
-        </form>
+
+          <div class="penalty">
+            <label for="penaltyDrinks">Penalty Drinks:</label>
+            <input type="number" id="penaltyDrinks" value="1" min="1" />
+          </div>
+            <button type="submit">Start Game</button>
+          </form>
+          <div id="leaderboard">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboardList"></ul>
+          </div>
+        </div>
+      
+        <!-- Game Screen -->
+        <div class="game-screen hidden">
+          <div id="scoreBoard">
+            <div id="player1Display"></div>
+            <div id="player2Display"></div>
+          </div>
+          <div id="currentCard">
+            <div class="front">Ready to start?</div>
+            <div class="back">Do or Drink</div>
+          </div>
+          <p id="turnIndicator"></p>
+          <div id="bottomButtons">
+            <button id="nextCard">Next Card</button>
+            <button id="completeDare">Complete Dare</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Game Screen -->
-      <div class="game-screen hidden">
-        <div id="scoreBoard">
-          <div id="player1Display"></div>
-          <div id="player2Display"></div>
-        </div>
-        <h2 id="currentCard">Ready to start?</h2>
-        <p id="turnIndicator"></p>
-        <button id="nextCard">Next Card</button>
-        <button id="completeDare">Complete Dare</button>
-        <button id="backToSetup">Back to Setup</button>
-      </div>
-    </div>
+    <!-- Add sound effects -->
+    <audio id="cardSound" src="sounds/card-draw.mp3"></audio>
+    <audio id="penaltySound" src="sounds/penalty.mp3"></audio>
+
+    <!-- Add confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 
     <script src="scripts/script.js"></script>
   </body>
