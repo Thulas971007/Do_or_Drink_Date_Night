@@ -1,58 +1,176 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #ecf840;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.setup-screen,
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
+
+.hidden {
+  display: none;
+}
+
+.player-input {
+  margin-bottom: 20px;
+}
+
+#scoreBoard {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#scoreBoard div {
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 40%;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #ff647f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff475f;
+}
+
+#currentCard {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  perspective: 1000px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+#currentCard .front,
+#currentCard .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  transition: transform 0.12s ease, box-shadow 0.6s ease;
+  background-color: white;
+}
+
+#currentCard .front {
+  transform: rotateY(0deg);
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  border: 2px solid #ddd;
+}
+
+#currentCard .back {
+  transform: rotateY(180deg);
+  background: repeating-linear-gradient(
+    45deg,
+    #ff6b6b,
+    #ff6b6b 10px,
+    #f128c6 10px,
+    #38d419 20px
+  );
+  border: 2px solid #ff475f;
+}
+
+#currentCard.flipped .front {
+  transform: rotateY(180deg);
+}
+
+#currentCard.flipped .back {
+  transform: rotateY(0deg);
+}
+
+#currentCard:hover .front,
+#currentCard:hover .back {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#currentCard.romantic .front {
+  background: linear-gradient(135deg, #ff6b6b, #ff475f);
+  color: white;
+}
+
+#currentCard.funny .front {
+  background: linear-gradient(135deg, #4ecdc4, #45b8b0);
+  color: white;
+}
+
+#currentCard.daring .front {
+  background: linear-gradient(135deg, #ff9f43, #ff8a33);
+  color: white;
+}
+
+#leaderboard {
+  margin-top: 20px;
+}
+
+#leaderboardList {
+  list-style-type: none;
+  padding: 0;
+}
+/* Bottom Buttons Container */
+#bottomButtons {
+  display: flex; /* Use Flexbox for layout */
+  justify-content: center; /* Center buttons horizontally */
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px; /* Add some space above the buttons */
+}
+
+/* General Button Styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #ff647f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff475f;
+}
+@media (max-width: 600px) {
+  #bottomButtons {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
   }
-  
-  #app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .setup-screen, .game-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .player-input {
-    margin-bottom: 20px;
-  }
-  
-  #scoreBoard {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
-  
-  #scoreBoard div {
-    font-size: 18px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 40%;
-  }
-  
-  button {
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #ff647f;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background: #ff475f;
-  }
-  
+}
+#Cat{
+  padding : 5;
+}
